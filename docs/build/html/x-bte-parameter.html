@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>x-bte-parameter Object &#8212; x-bte extension doc  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="x-bte-requestBody Object" href="x-bte-requestBody.html" />
+    <link rel="prev" title="x-bte-kgs-node Object" href="x-bte-kgs-node.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="x-bte-parameter-object">
+<span id="x-bte-parameter"></span><h1>x-bte-parameter Object<a class="headerlink" href="#x-bte-parameter-object" title="Permalink to this headline">¶</a></h1>
+<p>An object to hold parameter names and their corresponding values. If the value of the parameter is constant for the single-hop knowledge graph operation, use the const value in the object. If the value of the parameter is not constant and correspond to one of the inputs of the knowledge graph operation, use the notation $inputs[index], where the index refers to the index of the input in the inputs list. For example, $inputs[0] represents the first element of the inputs list.</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 23%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Properties</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Property name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>parameterName</p></td>
+<td><p>String</p></td>
+<td><p>The value of the parameter.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="x-bte-parameter-example">
+<h2>x-bte-parameter example<a class="headerlink" href="#x-bte-parameter-example" title="Permalink to this headline">¶</a></h2>
+<p>The following example represents a x-bte-kgs-parameter, where the interaction_type parameter takes a constant value “gene2chemical”, whereas the value parameter corresponds to the first inputs.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “interaction_type”: “gene2chemical”,
+    “value”: “$inputs[0]”
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">x-bte extension doc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-operations.html">x-bte-kgs-operations Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-operation.html">x-bte-kgs-operation Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-node.html">x-bte-kgs-node Object</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">x-bte-parameter Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-requestBody.html">x-bte-requestBody Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-response-mapping.html">x-bte-response-mapping Object</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="x-bte-kgs-node.html" title="previous chapter">x-bte-kgs-node Object</a></li>
+      <li>Next: <a href="x-bte-requestBody.html" title="next chapter">x-bte-requestBody Object</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, jiwen xin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/x-bte-parameter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

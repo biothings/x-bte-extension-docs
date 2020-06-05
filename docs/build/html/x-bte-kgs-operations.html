@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>x-bte-kgs-operations Object &#8212; x-bte extension doc  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="x-bte-kgs-operation Object" href="x-bte-kgs-operation.html" />
+    <link rel="prev" title="Working with Translator Knowledge Graph Operation extension" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="x-bte-kgs-operations-object">
+<span id="x-bte-kgs-operations"></span><h1>x-bte-kgs-operations Object<a class="headerlink" href="#x-bte-kgs-operations-object" title="Permalink to this headline">¶</a></h1>
+<p>Describe list of single-hop knowledge graph retrieval operations that a single OpenAPI operation can perform.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 23%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Properties</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Property name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>x-bte-kgs-operations</p></td>
+<td><p>[x-bte-kgs-op
+eration Object
+<a href="#id1"><span class="problematic" id="id2">|</span></a>Reference
+Object]</p></td>
+<td><p>A list of single-hop
+knowledge graph retrieval
+operations that an OpenAPI
+operation can perform. The
+list can use the Reference
+Object to link to x-bte-kgs
+operation defined in
+components</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="x-bte-kgs-operations-example">
+<h2>x-bte-kgs-operations example<a class="headerlink" href="#x-bte-kgs-operations-example" title="Permalink to this headline">¶</a></h2>
+<p>The following example defines two x-bte-kgs-operations (ChemicalSubstance – physically_interacts_with – Gene &amp;&amp; Gene – physically_interacts_with – ChemicalSubstance) associated with the GET operation of the /interactions endpoint.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;interactions.json&quot;: {
+        &quot;get&quot;: {
+            &quot;parameters&quot;: [
+                {
+                    &quot;in&quot;: &quot;query&quot;,
+                    &quot;name&quot;: &quot;drugs&quot;
+                },
+                {
+                    &quot;in&quot;: &quot;query&quot;,
+                    &quot;name&quot;: &quot;genes
+                }
+            ],
+            &quot;x-bte-kgs-operations&quot;: [
+                {
+                    &quot;inputs&quot;: [
+                        {
+                            &quot;id&quot;: &quot;biolink:CHEMBL.COMPOUND&quot;,
+                            &quot;semantic&quot;: &quot;biolink:ChemicalSubstance&quot;
+                        }
+                    ],
+                    &quot;outputs&quot;: [
+                        {
+                            &quot;id&quot;: &quot;biolink:NCBIGene&quot;,
+                            &quot;semantic&quot;: &quot;biolink:Gene&quot;
+                        }
+                    ],
+                    &quot;parameters&quot;: {
+                        &quot;drugs&quot;: &quot;$inputs[0]&quot;
+                    },
+                    &quot;predicate&quot;: &quot;biolink:physically_interacts_with&quot;,
+                    &quot;supportBatch&quot;: False,
+                    &quot;responseMapping&quot;: {
+                        &quot;NCBIGene&quot;: &quot;matchedTerms.interactions.geneEntrezId&quot;,
+                        &quot;publication&quot;: &quot;matchedTerms.interactions.pmids&quot;
+                    }
+                },
+                {
+                    &quot;inputs&quot;: [
+                        {
+                            &quot;id&quot;: &quot;biolink:NCBIGene&quot;,
+                            &quot;semantic&quot;: &quot;biolink:Gene&quot;
+                        }
+                    ],
+                    &quot;outputs&quot;: [
+                        {
+                            &quot;id&quot;: &quot;biolink:CHEMBL.COMPOUND&quot;,
+                            &quot;semantic&quot;: &quot;biolink:ChemicalSubstance&quot;
+                        }
+                    ],
+                    &quot;parameters&quot;: {
+                        &quot;genes&quot;: &quot;$inputs[0]&quot;
+                    },
+                    &quot;predicate&quot;: &quot;biolink:physically_interacts_with&quot;,
+                    &quot;supportBatch&quot;: False,
+                    &quot;responseMapping&quot;: {
+                        &quot;CHEMBL.COMPOUND&quot;: &quot;matchedTerms.interactions.drugChemblId&quot;,
+                        &quot;publication&quot;: &quot;matchedTerms.interactions.pmids&quot;
+                    }
+                }
+            ]
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">x-bte extension doc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">x-bte-kgs-operations Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#x-bte-kgs-operations-example">x-bte-kgs-operations example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-operation.html">x-bte-kgs-operation Object</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Working with Translator Knowledge Graph Operation extension</a></li>
+      <li>Next: <a href="x-bte-kgs-operation.html" title="next chapter">x-bte-kgs-operation Object</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, jiwen xin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/x-bte-kgs-operations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
