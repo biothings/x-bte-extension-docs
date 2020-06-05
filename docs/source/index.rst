@@ -7,10 +7,6 @@ Working with Translator Knowledge Graph Operation extension
 =======================================================================
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 ************
 Introduction
 ************
