@@ -57,9 +57,9 @@
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 23%" />
-<col style="width: 44%" />
+<col style="width: 32%" />
+<col style="width: 22%" />
+<col style="width: 46%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head" colspan="3"><p>Properties</p></th>
@@ -72,58 +72,70 @@
 <tbody>
 <tr class="row-odd"><td><p>inputs</p></td>
 <td><p>[x-bte-kgs-node Object]</p></td>
-<td><p>A list of single-hop
-knowledge graph retrieval
-operations that an OpenAPI
-operation can perform. The
-list can use the Reference
-Object to link to x-bte-kgs
-operation defined in
-components</p></td>
+<td><p>Specifies the list of inputs for the single-hop knowledge graph retrieval operation, including the inputsemantic type and input identifier type.</p></td>
 </tr>
 <tr class="row-even"><td><p>outputs</p></td>
 <td><p>[x-bte-kgs-node Object]</p></td>
-<td><dl class="simple">
-<dt>A list of single-hop</dt><dd><p>knowledge graph retrieval</p>
-</dd>
-</dl>
-<p>operations that an OpenAPI
-operation can perform. The
-list can use the Reference
-Object to link to x-bte-kgs
-operation defined in
-components</p>
+<td><blockquote>
+<div><p>Specifies the list of inpu</p>
+</div></blockquote>
+<p>ts for the single-hop knowledge graph retrieval operation, including the inputsemantic type and input identifier type.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>predicate</p></td>
 <td><p>String</p></td>
-<td></td>
+<td><p>Specifies the predicate for the kgs operation, in other words, the relationship between the inputs and outputs.</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
 <td><p>String</p></td>
-<td></td>
+<td><p>Specifies the source database which provides the association.</p></td>
 </tr>
 <tr class="row-odd"><td><p>parameters</p></td>
 <td><p>x-bte-parameter</p></td>
-<td></td>
+<td><p>An object to hold parameter names and their corresponding values. If the parameter corresponds to one of</p>
+<blockquote>
+<div><p>the inputs, should use th</p>
+</div></blockquote>
+<p>e following notation $inputs[index]. For example, $inputs[0] means this parameter correspond to the first element of the inputs.</p>
+</td>
 </tr>
 <tr class="row-even"><td><p>requestBody</p></td>
 <td><p>x-bte-requestBody</p></td>
-<td></td>
+<td><dl class="simple">
+<dt>An object representing the</dt><dd><p>request body. If a parame</p>
+</dd>
+</dl>
+<p>ter corresponds to one of the inputs, should use the</p>
+<blockquote>
+<div><p>following notation $input</p>
+</div></blockquote>
+<p>s[index]. For example, $inputs[0] means this parameter correspond to the first</p>
+<blockquote>
+<div><p>element of the inputs.</p>
+</div></blockquote>
+</td>
 </tr>
 <tr class="row-odd"><td><p>supportBatch</p></td>
 <td><p>Boolean</p></td>
-<td></td>
+<td><p>Indicate whether the operation support batch query.</p></td>
 </tr>
 <tr class="row-even"><td><p>inputSeparators</p></td>
 <td><p>String</p></td>
-<td></td>
+<td><dl class="simple">
+<dt>Describe the operator used</dt><dd><p>to separate inputs in a b</p>
+</dd>
+</dl>
+<p>atch query. Only need to specify when supportBatch is True. Default value is “,”.</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>responseMapping</p></td>
 <td><p>x-bte-response
--mapping
-Object</p></td>
-<td></td>
+-mapping Objet</p></td>
+<td><p>Provide one-to-one map between individual field in the API response and the corresponding concept in the</p>
+<blockquote>
+<div><p>biolink model.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -184,6 +196,9 @@ Object</p></td>
 <li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-operations.html">x-bte-kgs-operations Object</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">x-bte-kgs-operation Object</a></li>
 <li class="toctree-l1"><a class="reference internal" href="x-bte-kgs-node.html">x-bte-kgs-node Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-parameter.html">x-bte-parameter Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-requestBody.html">x-bte-requestBody Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x-bte-response-mapping.html">x-bte-response-mapping Object</a></li>
 </ul>
 
 <div class="relations">

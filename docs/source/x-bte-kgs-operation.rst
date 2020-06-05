@@ -27,39 +27,68 @@ Properties
 -----------------------------------------------------------------
 Property name         Type            Description
 ====================  ==============  ===========================
-inputs                [x-bte-kgs-no\  A list of single-hop 
-                      de Object]      knowledge graph retrieval
-                                      operations that an OpenAPI
-                                      operation can perform. The
-                                      list can use the Reference
-                                      Object to link to x-bte-kgs
-                                      operation defined in 
-                                      components
-outputs               [x-bte-kgs-n\   A list of single-hop 
-                      ode Object]      knowledge graph retrieval
-                                      operations that an OpenAPI
-                                      operation can perform. The
-                                      list can use the Reference
-                                      Object to link to x-bte-kgs
-                                      operation defined in 
-                                      components
-predicate             String
+inputs                [x-bte-kgs-no\  Specifies the list of inpu\
+                      de Object]      ts for the single-hop know\
+                                      ledge graph retrieval oper\
+                                      ation, including the input\
+                                      semantic type and input i\
+                                      dentifier type.                         
+outputs               [x-bte-kgs-no\   Specifies the list of inpu\
+                      de Object]      ts for the single-hop know\
+                                      ledge graph retrieval oper\
+                                      ation, including the input\
+                                      semantic type and input i\
+                                      dentifier type.
 
-source                String
+predicate             String          Specifies the predicate fo\
+                                      r the kgs operation, in ot\
+                                      her words, the relationshi\
+                                      p between the inputs and o\
+                                      utputs.
 
-parameters            x-bte-paramet\
-                      er
+source                String          Specifies the source datab\
+                                      ase which provides the ass\
+                                      ociation.
 
-requestBody           x-bte-request\
-                      Body
+parameters            x-bte-paramet\  An object to hold paramete\
+                      er              r names and their correspo\
+                                      nding values. If the param\
+                                      eter corresponds to one of\
+                                       the inputs, should use th\
+                                      e following notation $inpu\
+                                      ts[index]. For example, $i\
+                                      nputs[0] means this parame\
+                                      ter correspond to the firs\
+                                      t element of the inputs.
+                      
 
-supportBatch          Boolean
+requestBody           x-bte-request\  An object representing the\
+                      Body             request body. If a parame\
+                                      ter corresponds to one of \
+                                      the inputs, should use the\
+                                       following notation $input\
+                                      s[index]. For example, $in\
+                                      puts[0] means this paramet\
+                                      er correspond to the first\
+                                       element of the inputs.
+                      
 
-inputSeparators       String
+supportBatch          Boolean         Indicate whether the opera\
+                                      tion support batch query.
 
-responseMapping       x-bte-response
-                      -mapping
-                      Object
+inputSeparators       String          Describe the operator used\
+                                       to separate inputs in a b\
+                                      atch query. Only need to s\
+                                      pecify when supportBatch i\
+                                      s True. Default value is “,”.
+
+responseMapping       x-bte-response  Provide one-to-one map bet\
+                      -mapping Obje\  ween individual field in t\
+                      t               he API response and the co\
+                                      rresponding concept in the\
+                                       biolink model.
+                      
+                      
 ====================  ==============  ===========================
 
 x-bte-kgs-operations example
