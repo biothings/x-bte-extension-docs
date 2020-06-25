@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'x-bte extension doc'
+project = 'x-smartapi extension doc'
 copyright = '2020, jiwen xin'
 author = 'jiwen xin'
 
