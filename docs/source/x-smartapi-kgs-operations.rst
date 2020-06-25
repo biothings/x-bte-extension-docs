@@ -1,6 +1,6 @@
-.. _x-bte-kgs-operations:
+.. _x-smartapi-kgs-operations:
 
-x-bte-kgs-operations Object
+x-smartapi-kgs-operations Object
 ===========================
 
 Describe list of single-hop knowledge graph retrieval operations that a single OpenAPI operation can perform.
@@ -11,20 +11,20 @@ Describe list of single-hop knowledge graph retrieval operations that a single O
 -----------------------------------------------------------------
 Property name         Type            Description
 ====================  ==============  ===========================
-x-bte-kgs-operations  [x-bte-kgs-op   A list of single-hop 
+x-smartapi-kgs-operations  [x-smartapi-kgs-op   A list of single-hop 
                       eration Object  knowledge graph retrieval
                       |Reference      operations that an OpenAPI
                       Object]         operation can perform. The
                                       list can use the Reference
-                                      Object to link to x-bte-kgs
+                                      Object to link to x-smartapi-kgs
                                       operation defined in 
                                       components
 ====================  ==============  ===========================
 
-x-bte-kgs-operations example
+x-smartapi-kgs-operations example
 ****************************
 
-The following example defines two x-bte-kgs-operations (ChemicalSubstance – physically_interacts_with – Gene && Gene – physically_interacts_with -- ChemicalSubstance) associated with the GET operation of the /interactions endpoint.
+The following example defines two x-smartapi-kgs-operations (ChemicalSubstance – physically_interacts_with – Gene && Gene – physically_interacts_with -- ChemicalSubstance) associated with the GET operation of the /interactions endpoint.
 
 
 .. code-block:: json
@@ -42,7 +42,7 @@ The following example defines two x-bte-kgs-operations (ChemicalSubstance – ph
                         "name": "genes
                     }
                 ],
-                "x-bte-kgs-operations": [
+                "x-smartapi-kgs-operations": [
                     {
                         "inputs": [
                             {

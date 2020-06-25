@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>x-bte-requestBody Object &#8212; x-bte extension doc  documentation</title>
+    <title>x-smartapi-response-mapping Object &#8212; x-bte extension doc  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -15,6 +15,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="x-smartapi-requestBody Object" href="x-smartapi-requestBody.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -29,9 +30,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="x-bte-requestbody-object">
-<span id="x-bte-requestbody"></span><h1>x-bte-requestBody Object<a class="headerlink" href="#x-bte-requestbody-object" title="Permalink to this headline">¶</a></h1>
-<p>An object representing the request body. If the value of the requestBody parameter is constant for the single-hop knowledge graph operation, use the const value in the object. If the value of the parameter is not constant and correspond to one of the inputs of the knowledge graph operation, use the notation $inputs[index], where the index refers to the index of the input in the inputs list. For example, $inputs[0] represents the first element of the inputs list.</p>
+  <div class="section" id="x-smartapi-response-mapping-object">
+<span id="x-smartapi-response-mapping"></span><h1>x-smartapi-response-mapping Object<a class="headerlink" href="#x-smartapi-response-mapping-object" title="Permalink to this headline">¶</a></h1>
+<p>Provide one-to-one map between individual field in the API response and the corresponding concept in the Biolink model.</p>
 <div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -49,22 +50,27 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-odd"><td>parameterName</td>
+<tr class="row-odd"><td>biolinkConceptName</td>
 <td>String</td>
-<td>The value of the parameter.</td>
+<td><p class="first">Map between individual fiefield in API response and corresponding concept name</p>
+<blockquote>
+<div>in Biolink model. Nested </div></blockquote>
+<p class="last">fields should be represented using the dot notation.</p>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="x-bte-requestbody-example">
-<h2>x-bte-requestBody example<a class="headerlink" href="#x-bte-requestbody-example" title="Permalink to this headline">¶</a></h2>
-<p>The following example represents a x-bte-requestBody object, where the scopes parameter takes a constant value “entrezgene”, whereas the q parameter corresponds to the first inputs.
+<div class="section" id="x-smartapi-response-mapping-example">
+<h2>x-smartapi-response-mapping example<a class="headerlink" href="#x-smartapi-response-mapping-example" title="Permalink to this headline">¶</a></h2>
+<p>The following example represents a x-smartapi-response-mapping object, where the nested field “go.CC.id” correspond to the Biolink concept GO, and the “go.CC.pubmed” correspond to the Biolink concept publication.
 .. code-block:: json</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>{</dt>
-<dd>“q”: “$inputs[0]”,
-“value”: “entrezgene”</dd>
+<dd><p class="first">“GO”: “go.CC.id”,</p>
+<p class="last">“publication”: “go.CC.pubmed”</p>
+</dd>
 </dl>
 <p>}</p>
 </div></blockquote>
@@ -79,9 +85,9 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">x-bte-requestBody Object</a><ul>
+<li><a class="reference internal" href="#">x-smartapi-response-mapping Object</a><ul>
 <li><a class="reference internal" href="#properties">Properties</a></li>
-<li><a class="reference internal" href="#x-bte-requestbody-example">x-bte-requestBody example</a></li>
+<li><a class="reference internal" href="#x-smartapi-response-mapping-example">x-smartapi-response-mapping example</a></li>
 </ul>
 </li>
 </ul>
@@ -89,13 +95,14 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="x-smartapi-requestBody.html" title="previous chapter">x-smartapi-requestBody Object</a></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/x-bte-requestBody.rst.txt"
+      <li><a href="_sources/x-smartapi-response-mapping.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -123,7 +130,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/x-bte-requestBody.rst.txt"
+      <a href="_sources/x-smartapi-response-mapping.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

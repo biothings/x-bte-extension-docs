@@ -29,6 +29,7 @@ The following example represents a x-smartapi-response-mapping object, where the
 
         {
             “GO”: “go.CC.id”,
+            
             “publication”: “go.CC.pubmed”
         }
 

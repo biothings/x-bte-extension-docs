@@ -1,11 +1,11 @@
-.. _x-bte-kgs-operation:
+.. _x-smartapi-kgs-operation:
 
-x-bte-kgs-operation Object
+x-smartapi-kgs-operation Object
 ==========================
 
 Describe a single-hop knowledge graph retrieval operation.
 
-The x-bte-kgs-operation object contains 3 parts:
+The x-smartapi-kgs-operation object contains 3 parts:
 
 * Single-hop knowledge graph association
 
@@ -27,13 +27,13 @@ Properties
 -----------------------------------------------------------------
 Property name         Type            Description
 ====================  ==============  ===========================
-inputs                [x-bte-kgs-no\  Specifies the list of inpu\
+inputs                [x-smartapi-kgs-no\  Specifies the list of inpu\
                       de Object]      ts for the single-hop know\
                                       ledge graph retrieval oper\
                                       ation, including the input\
                                       semantic type and input i\
                                       dentifier type.                         
-outputs               [x-bte-kgs-no\   Specifies the list of inpu\
+outputs               [x-smartapi-kgs-no\   Specifies the list of inpu\
                       de Object]      ts for the single-hop know\
                                       ledge graph retrieval oper\
                                       ation, including the input\
@@ -50,7 +50,7 @@ source                String          Specifies the source datab\
                                       ase which provides the ass\
                                       ociation.
 
-parameters            x-bte-paramet\  An object to hold paramete\
+parameters            x-smartapi-paramet\  An object to hold paramete\
                       er              r names and their correspo\
                                       nding values. If the param\
                                       eter corresponds to one of\
@@ -62,7 +62,7 @@ parameters            x-bte-paramet\  An object to hold paramete\
                                       t element of the inputs.
                       
 
-requestBody           x-bte-request\  An object representing the\
+requestBody           x-smartapi-request\  An object representing the\
                       Body             request body. If a parame\
                                       ter corresponds to one of \
                                       the inputs, should use the\
@@ -82,7 +82,7 @@ inputSeparators       String          Describe the operator used\
                                       pecify when supportBatch i\
                                       s True. Default value is “,”.
 
-responseMapping       x-bte-response  Provide one-to-one map bet\
+responseMapping       x-smartapi-response  Provide one-to-one map bet\
                       -mapping Obje\  ween individual field in t\
                       t               he API response and the co\
                                       rresponding concept in the\
@@ -91,16 +91,16 @@ responseMapping       x-bte-response  Provide one-to-one map bet\
                       
 ====================  ==============  ===========================
 
-x-bte-kgs-operations example
+x-smartapi-kgs-operations example
 ****************************
 
-The following example defines one x-bte-kgs-operation (ChemicalSubstance – physically_interacts_with – Gene).
+The following example defines one x-smartapi-kgs-operation (ChemicalSubstance – physically_interacts_with – Gene).
 
 
 .. code-block:: json
 
     {
-        "x-bte-kgs-operations": [
+        "x-smartapi-kgs-operations": [
             {
                 "inputs": [
                     {
