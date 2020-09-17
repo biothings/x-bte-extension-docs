@@ -1,6 +1,6 @@
-.. _x-smartapi-response-mapping:
+.. _x-bte-response-mapping:
 
-x-smartapi-response-mapping Object
+x-bte-response-mapping Object
 =============================
 
 Provide one-to-one map between individual field in the API response and the corresponding concept in the Biolink model.
@@ -21,10 +21,10 @@ biolinkConceptName    String          Map between individual fie\
                                       ed using the dot notation.
 ====================  ==============  ===========================
 
-x-smartapi-response-mapping example
+x-bte-response-mapping example
 ******************************
 
-The following example represents a x-smartapi-response-mapping object, where the nested field “go.CC.id” correspond to the Biolink concept GO, and the “go.CC.pubmed” correspond to the Biolink concept publication.
+The following example represents a x-bte-response-mapping object, where the nested field “go.CC.id” correspond to the Biolink concept GO, and the “go.CC.pubmed” correspond to the Biolink concept publication.
 .. code-block:: json
 
         {

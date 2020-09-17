@@ -1,6 +1,6 @@
-.. _x-smartapi-kgs-operations:
+.. _x-bte-kgs-operations:
 
-x-smartapi-kgs-operations Object
+x-bte-kgs-operations Object
 ===========================
 
 Describe list of single-hop knowledge graph retrieval operations that a single OpenAPI operation can perform.
@@ -11,20 +11,20 @@ Describe list of single-hop knowledge graph retrieval operations that a single O
 -----------------------------------------------------------------
 Property name         Type            Description
 ====================  ==============  ===========================
-x-smartapi-kgs-operations  [x-smartapi-kgs-op   A list of single-hop 
+x-bte-kgs-operations  [x-bte-kgs-op   A list of single-hop 
                       eration Object  knowledge graph retrieval
                       |Reference      operations that an OpenAPI
                       Object]         operation can perform. The
                                       list can use the Reference
-                                      Object to link to x-smartapi-kgs
+                                      Object to link to x-bte-kgs
                                       operation defined in 
                                       components
 ====================  ==============  ===========================
 
-x-smartapi-kgs-operations example
+x-bte-kgs-operations example
 ****************************
 
-The following example defines two x-smartapi-kgs-operations (ChemicalSubstance – physically_interacts_with – Gene && Gene – physically_interacts_with -- ChemicalSubstance) associated with the GET operation of the /interactions endpoint.
+The following example defines two x-bte-kgs-operations (ChemicalSubstance – physically_interacts_with – Gene && Gene – physically_interacts_with -- ChemicalSubstance) associated with the GET operation of the /interactions endpoint.
 
 
 .. code-block:: json
@@ -42,7 +42,7 @@ The following example defines two x-smartapi-kgs-operations (ChemicalSubstance �
                         "name": "genes
                     }
                 ],
-                "x-smartapi-kgs-operations": [
+                "x-bte-kgs-operations": [
                     {
                         "inputs": [
                             {
@@ -57,7 +57,7 @@ The following example defines two x-smartapi-kgs-operations (ChemicalSubstance �
                             }
                         ],
                         "parameters": {
-                            "drugs": "$inputs[0]"
+                            "drugs": "{inputs[0]}"
                         },
                         "predicate": "biolink:physically_interacts_with",
                         "supportBatch": False,
@@ -80,7 +80,7 @@ The following example defines two x-smartapi-kgs-operations (ChemicalSubstance �
                             }
                         ],     
                         "parameters": {
-                            "genes": "$inputs[0]"
+                            "genes": "{inputs[0]}"
                         },
                         "predicate": "biolink:physically_interacts_with",
                         "supportBatch": False,

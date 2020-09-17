@@ -115,7 +115,7 @@ The following example defines one x-bte-kgs-operation (ChemicalSubstance – phy
                     }
                 ],
                 "parameters": {
-                    "drugs": "$inputs[0]"
+                    "drugs": "{inputs[0]}"
                 },
                 "predicate": "biolink:physically_interacts_with",
                 "supportBatch": False,

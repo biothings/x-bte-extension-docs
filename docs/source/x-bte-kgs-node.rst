@@ -1,6 +1,6 @@
-.. _x-smartapi-kgs-node:
+.. _x-bte-kgs-node:
 
-x-smartapi-kgs-node Object
+x-bte-kgs-node Object
 ==========================
 
 Describe a node in a meta knowledge graph. Used to describe the inputs and outputs of a single-hop knowledge graph retrieval operation.
@@ -23,10 +23,10 @@ semantic              String          The semantic type used to \
                                       refixed with "biolink:".
 ====================  ==============  ===========================
 
-x-smartapi-kgs-node example
+x-bte-kgs-node example
 ****************************
 
-The following example represents a x-smartapi-kgs-node object with identifier as “NCBIGene” from the biolink model and semantic type as “Gene” from the biolink model.
+The following example represents a x-bte-kgs-node object with identifier as “NCBIGene” from the biolink model and semantic type as “Gene” from the biolink model.
 
 .. code-block:: json
 

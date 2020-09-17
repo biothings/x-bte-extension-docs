@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>x-bte-kgs-operation Object &#8212; x-bte extension doc  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="x-bte-kgs-node Object" href="x-bte-kgs-node.html" />
+    <link rel="prev" title="x-bte-kgs-operations Object" href="x-bte-kgs-operations.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="x-bte-kgs-operation-object">
+<span id="x-bte-kgs-operation"></span><h1>x-bte-kgs-operation Object<a class="headerlink" href="#x-bte-kgs-operation-object" title="Permalink to this headline">¶</a></h1>
+<p>Describe a single-hop knowledge graph retrieval operation.</p>
+<p>The x-bte-kgs-operation object contains 3 parts:</p>
+<ul>
+<li><p class="first">Single-hop knowledge graph association</p>
+<blockquote>
+<div><p>Metadata information describing the knowledge retrieval operation, including the input, output, predicate and source. One kgs-operation may have more than one inputs or outputs, but it should have exactly one predicate to capture the relationship between the input(s) and output(s).</p>
+</div></blockquote>
+</li>
+<li><p class="first">API Operation</p>
+<blockquote>
+<div><p>Describe how to structure the API call in order to retrieve the knowledge, including request body and parameters. Other relevant information to perform API query, e.g. server URL, path, HTTP method can be inferred from the server object and path object.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Response Mapping</p>
+<blockquote>
+<div><p>Map individual fields in the API response to their corresponding concepts in the Biolink model.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="22%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">Properties</th>
+</tr>
+<tr class="row-even"><th class="head">Property name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>inputs</td>
+<td>[x-bte-kgs-node Object]</td>
+<td>Specifies the list of inputs for the single-hop knowledge graph retrieval operation, including the inputsemantic type and input identifier type.</td>
+</tr>
+<tr class="row-even"><td>outputs</td>
+<td>[x-bte-kgs-node Object]</td>
+<td><blockquote class="first">
+<div>Specifies the list of inpu</div></blockquote>
+<p class="last">ts for the single-hop knowledge graph retrieval operation, including the inputsemantic type and input identifier type.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>predicate</td>
+<td>String</td>
+<td>Specifies the predicate for the kgs operation, in other words, the relationship between the inputs and outputs.</td>
+</tr>
+<tr class="row-even"><td>source</td>
+<td>String</td>
+<td>Specifies the source database which provides the association.</td>
+</tr>
+<tr class="row-odd"><td>parameters</td>
+<td>x-bte-parameter</td>
+<td><p class="first">An object to hold parameter names and their corresponding values. If the parameter corresponds to one of</p>
+<blockquote>
+<div>the inputs, should use th</div></blockquote>
+<p class="last">e following notation $inputs[index]. For example, $inputs[0] means this parameter correspond to the first element of the inputs.</p>
+</td>
+</tr>
+<tr class="row-even"><td>requestBody</td>
+<td>x-bte-requestBody</td>
+<td><dl class="first docutils">
+<dt>An object representing the</dt>
+<dd>request body. If a parame</dd>
+</dl>
+<p>ter corresponds to one of the inputs, should use the</p>
+<blockquote>
+<div>following notation $input</div></blockquote>
+<p>s[index]. For example, $inputs[0] means this parameter correspond to the first</p>
+<blockquote class="last">
+<div>element of the inputs.</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td>supportBatch</td>
+<td>Boolean</td>
+<td>Indicate whether the operation support batch query.</td>
+</tr>
+<tr class="row-even"><td>inputSeparators</td>
+<td>String</td>
+<td><dl class="first docutils">
+<dt>Describe the operator used</dt>
+<dd>to separate inputs in a b</dd>
+</dl>
+<p class="last">atch query. Only need to specify when supportBatch is True. Default value is “,”.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>responseMapping</td>
+<td>x-bte-response
+-mapping Objet</td>
+<td><p class="first">Provide one-to-one map between individual field in the API response and the corresponding concept in the</p>
+<blockquote class="last">
+<div>biolink model.</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="x-bte-kgs-operations-example">
+<h2>x-bte-kgs-operations example<a class="headerlink" href="#x-bte-kgs-operations-example" title="Permalink to this headline">¶</a></h2>
+<p>The following example defines one x-bte-kgs-operation (ChemicalSubstance – physically_interacts_with – Gene).</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;x-bte-kgs-operations&quot;: [
+        {
+            &quot;inputs&quot;: [
+                {
+                    &quot;id&quot;: &quot;biolink:CHEMBL.COMPOUND&quot;,
+                    &quot;semantic&quot;: &quot;biolink:ChemicalSubstance&quot;
+                }
+            ],
+            &quot;outputs&quot;: [
+                {
+                    &quot;id&quot;: &quot;biolink:NCBIGene&quot;,
+                    &quot;semantic&quot;: &quot;biolink:Gene&quot;
+                }
+            ],
+            &quot;parameters&quot;: {
+                &quot;drugs&quot;: &quot;{inputs[0]}&quot;
+            },
+            &quot;predicate&quot;: &quot;biolink:physically_interacts_with&quot;,
+            &quot;supportBatch&quot;: False,
+            &quot;responseMapping&quot;: {
+                &quot;NCBIGene&quot;: &quot;matchedTerms.interactions.geneEntrezId&quot;,
+                &quot;publication&quot;: &quot;matchedTerms.interactions.pmids&quot;
+            }
+        }
+    ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">x-bte-kgs-operation Object</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#x-bte-kgs-operations-example">x-bte-kgs-operations example</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="x-bte-kgs-operations.html" title="previous chapter">x-bte-kgs-operations Object</a></li>
+      <li>Next: <a href="x-bte-kgs-node.html" title="next chapter">x-bte-kgs-node Object</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/x-bte-kgs-operation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, jiwen xin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/x-bte-kgs-operation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

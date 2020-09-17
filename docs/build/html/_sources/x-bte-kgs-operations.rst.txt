@@ -57,7 +57,7 @@ The following example defines two x-bte-kgs-operations (ChemicalSubstance – ph
                             }
                         ],
                         "parameters": {
-                            "drugs": "$inputs[0]"
+                            "drugs": "{inputs[0]}"
                         },
                         "predicate": "biolink:physically_interacts_with",
                         "supportBatch": False,
@@ -80,7 +80,7 @@ The following example defines two x-bte-kgs-operations (ChemicalSubstance – ph
                             }
                         ],     
                         "parameters": {
-                            "genes": "$inputs[0]"
+                            "genes": "{inputs[0]}"
                         },
                         "predicate": "biolink:physically_interacts_with",
                         "supportBatch": False,

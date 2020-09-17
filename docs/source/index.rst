@@ -1,4 +1,4 @@
-.. x-smartapi extension doc documentation master file, created by
+.. x-bte extension doc documentation master file, created by
    sphinx-quickstart on Fri Jun  5 11:28:45 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -19,12 +19,12 @@ Topics
 .. toctree::
    :maxdepth: 1
 
-   x-smartapi-kgs-operations
-   x-smartapi-kgs-operation
-   x-smartapi-kgs-node
-   x-smartapi-parameter
-   x-smartapi-requestBody
-   x-smartapi-response-mapping
+   x-bte-kgs-operations
+   x-bte-kgs-operation
+   x-bte-kgs-node
+   x-bte-parameter
+   x-bte-requestBody
+   x-bte-response-mapping
 
 
 Indices and tables
